@@ -140,6 +140,7 @@ nav.scrolled {
     z-index: -1;
     filter: brightness(0.4);
     will-change: transform;
+    border-radius: 15px;
 }
 
 .hero-content {
