@@ -184,6 +184,9 @@ nav.scrolled {
     color: #ffffff;
 }
 
+#Brand {
+    color: #ffffff;
+}
 .cta-button:hover {
     transform: translateY(-5px) scale(1.05); /* Enlarged CTA hover */
     box-shadow: 0 15px 40px rgba(255, 51, 102, 0.5);
