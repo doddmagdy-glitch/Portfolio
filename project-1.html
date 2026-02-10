@@ -3,59 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Name - Video Portfolio</title>
+    <title>Social Media Reel – Project 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bg-gradient"></div>
 
-    <nav>
-        <a href="index.html" style="text-decoration: none;">
-        <div class="logo">Khaled</div>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html" class="active">Portfolio</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+<div class="bg-gradient"></div>
 
-    <section class="project-detail-section">
-        <div class="project-header">
-            <a href="portfolio.html" class="back-link">← Back to Portfolio</a>
-            <h1 class="section-title">Cinematic Wedding Highlight</h1>
-            <p class="project-subtitle">Color Grading | Sound Design | 4K Editing</p>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Khaled</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="nav">
+            <ul class="navbar-nav gap-3">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+            </ul>
         </div>
+    </div>
+</nav>
 
-        <div class="dynamic-video-wrapper">
-    <div class="video-item">
-        <iframe 
-            src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F877121025022593%2F&show_text=false&width=267&t=0" 
-            scrolling="no" 
-            frameborder="0" 
-            allowfullscreen="true" 
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-        </iframe>
+<section class="project-detail-section">
+    <div class="text-center mb-5">
+        <a href="portfolio.html" class="back-link">← Back to Portfolio</a>
+        <h1 class="section-title">Social Media Reel</h1>
+        <p class="text-secondary">Vertical Video · Fast-Paced Edit</p>
     </div>
 
+    <div class="container-fluid">
+        <div class="row g-5 align-items-start">
+            <div class="col-12 col-lg-5">
+                <div class="video-item vertical">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+            </div>
 
-        <div class="project-info">
-            <div class="info-block">
-                <h3>The Challenge</h3>
-                <p>Describe what the client wanted and the mood you were trying to capture.</p>
+            <div class="col-12 col-lg-7">
+                <div class="project-info">
+                    <div class="info-block">
+                        <h3>Concept</h3>
+                        <p>A high-energy social reel designed to stop the scroll within the first two seconds using punchy cuts and bold captions.</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>Execution</h3>
+                        <p>Edited in Premiere Pro with frame-accurate cuts. Optimized for Instagram Reels with safe-zone awareness.</p>
+                    </div>
+                </div>
             </div>
-            <div class="info-block">
-                <h3>My Process</h3>
-                <p>Talk about the software used (Premiere Pro, DaVinci Resolve) and specific techniques applied.</p>
-            </div>
-            <a href="https://yourprojectlink.com" class="cta-button" target="_blank">Visit Website</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2024 Khaled Magdy. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2024 Khaled Magdy. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

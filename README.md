@@ -16,18 +16,21 @@ A professional, multi-page portfolio website for video editors with comprehensiv
 ## Pages Overview
 
 ### 1. Home (index.html)
+
 - Hero section with compelling headline
 - Value propositions
 - Services preview
 - Call-to-action sections
 
 ### 2. Portfolio (portfolio.html)
+
 - 12 project showcases with detailed descriptions
 - Filterable by category (Commercial, Music, Documentary, Social, Corporate)
 - Project tags and metrics
 - Hover effects revealing project details
 
 ### 3. Skills (skills.html)
+
 - Detailed expertise breakdown
 - Software proficiency (Premiere Pro, Final Cut Pro, DaVinci Resolve, etc.)
 - Technical skills and capabilities
@@ -35,6 +38,7 @@ A professional, multi-page portfolio website for video editors with comprehensiv
 - Certifications section
 
 ### 4. About (about.html)
+
 - Personal story and journey
 - Work philosophy
 - Client testimonials
@@ -42,6 +46,7 @@ A professional, multi-page portfolio website for video editors with comprehensiv
 - Personal interests
 
 ### 5. Contact (contact.html)
+
 - Comprehensive contact form
 - Direct contact information
 - FAQ section
@@ -51,22 +56,26 @@ A professional, multi-page portfolio website for video editors with comprehensiv
 ## SEO Features
 
 ### Meta Tags
+
 - Title tags optimized for search engines
 - Meta descriptions for all pages
 - Keyword optimization
 - Author and robots tags
 
 ### Open Graph & Twitter Cards
+
 - Social media preview optimization
 - Custom OG images (you'll need to add these)
 - Twitter Card integration
 
 ### Structured Data
+
 - Schema.org markup for professional services
 - Enhanced search result appearance
 - Local business information
 
 ### Additional SEO
+
 - sitemap.xml for search engine crawling
 - robots.txt for crawler instructions
 - Canonical URLs
@@ -77,12 +86,14 @@ A professional, multi-page portfolio website for video editors with comprehensiv
 ### 1. Replace Placeholder Content
 
 **Contact Information:**
+
 - Update email addresses in all pages
 - Add your phone number
 - Update social media links
 - Add your location/address
 
 **Personal Information:**
+
 - Replace "Your City", "Your State" in schema markup
 - Update business hours
 - Add your name and bio
@@ -91,6 +102,7 @@ A professional, multi-page portfolio website for video editors with comprehensiv
 ### 2. Update Images
 
 Replace placeholder Unsplash images with your actual project screenshots:
+
 - Portfolio projects (16:9 aspect ratio recommended)
 - Add your headshot/profile photo
 - Create Open Graph images (1200x630px)
@@ -99,32 +111,36 @@ Replace placeholder Unsplash images with your actual project screenshots:
 ### 3. Customize Colors
 
 In `styles.css`, update the CSS variables:
+
 ```css
 :root {
-    --bg-dark: #0a0a0a;
-    --bg-card: #141414;
-    --accent-primary: #ff3366;  /* Your brand color */
-    --accent-secondary: #00ffcc;  /* Accent color */
-    --text-primary: #ffffff;
-    --text-secondary: #999999;
-    --border-color: #222222;
+  --bg-dark: #0a0a0a;
+  --bg-card: #141414;
+  --accent-primary: #ff3366; /* Your brand color */
+  --accent-secondary: #00ffcc; /* Accent color */
+  --text-primary: #ffffff;
+  --text-secondary: #999999;
+  --border-color: #222222;
 }
 ```
 
 ### 4. Update SEO Information
 
 **In each HTML file's `<head>` section:**
+
 - Replace "yourwebsite.com" with your actual domain
 - Update meta descriptions to match your services
 - Update keywords relevant to your niche
 - Add your actual social media URLs
 
 **In sitemap.xml:**
+
 - Update all URLs to your domain
 - Update lastmod dates
 - Adjust changefreq based on how often you update
 
 **In Schema.org markup (index.html):**
+
 - Add your business name
 - Update address and location
 - Add your phone number
@@ -135,31 +151,39 @@ In `styles.css`, update the CSS variables:
 The contact form currently shows an alert. To make it functional:
 
 **Option A: Use a form service (FormSpree, Netlify Forms, etc.)**
+
 ```html
-<form action="https://formspree.io/f/your-form-id" method="POST">
+<form action="https://formspree.io/f/your-form-id" method="POST"></form>
 ```
 
 **Option B: Connect to your own backend**
 Uncomment and modify the fetch code in `script.js`:
+
 ```javascript
-fetch('/api/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
+fetch("/api/contact", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data),
 });
 ```
 
 ### 6. Add Analytics
 
 Add Google Analytics or your preferred analytics:
+
 ```html
 <!-- In the <head> of each page -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "GA_MEASUREMENT_ID");
 </script>
 ```
 
@@ -182,18 +206,21 @@ video-editor-portfolio/
 ## Deployment
 
 ### Option 1: Netlify (Recommended)
+
 1. Create a GitHub repository
 2. Push all files
 3. Connect to Netlify
 4. Deploy (automatically handles forms too!)
 
 ### Option 2: GitHub Pages
+
 1. Create a GitHub repository
 2. Push all files
 3. Enable GitHub Pages in repository settings
 4. Your site will be at username.github.io/repo-name
 
 ### Option 3: Traditional Web Hosting
+
 1. Upload all files to your web host via FTP
 2. Ensure files are in the public_html or www directory
 3. Your site will be at your domain
@@ -217,6 +244,7 @@ video-editor-portfolio/
 ## Accessibility
 
 The site includes:
+
 - Semantic HTML structure
 - ARIA labels for icons
 - Keyboard navigation support
@@ -226,6 +254,7 @@ The site includes:
 ## Future Enhancements
 
 Consider adding:
+
 - Blog section for SEO content
 - Video showreel integration
 - Client login area
@@ -237,6 +266,7 @@ Consider adding:
 ## Support & Updates
 
 To update content:
+
 1. Edit the HTML files directly
 2. Update dates in sitemap.xml
 3. Test locally before deploying
