@@ -1,60 +1,130 @@
-// Unified Intersection Observer for Animations & Numbers
-const observerOptions = { threshold: 0.2 };
+/* ============================================================
+   KHALED MAGDY — Portfolio Scripts
+   ============================================================ */
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            
-            // Trigger Stat Counter if this is a stat item
-            if (entry.target.classList.contains('stat-item')) {
-                const numEl = entry.target.querySelector('.stat-number');
-                animateValue(numEl);
-            }
-            observer.unobserve(entry.target);
-        }
+// --- Custom Cursor ---
+const cursor     = document.querySelector('.cursor');
+const cursorRing = document.querySelector('.cursor-ring');
+
+if (cursor && cursorRing) {
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        cursor.style.left = mx + 'px';
+        cursor.style.top  = my + 'px';
     });
-}, observerOptions);
-
-// Counter Function
-function animateValue(obj) {
-    const target = parseInt(obj.innerText);
-    let start = 0;
-    const duration = 1500;
-    const step = (timestamp) => {
-        if (!start) start = timestamp;
-        const progress = Math.min((timestamp - start) / duration, 1);
-        obj.innerHTML = Math.floor(progress * target) + (obj.innerText.includes('+') ? '+' : '');
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
+    // ring lags slightly behind
+    const trackRing = () => {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        cursorRing.style.left = rx + 'px';
+        cursorRing.style.top  = ry + 'px';
+        requestAnimationFrame(trackRing);
     };
-    window.requestAnimationFrame(step);
+    trackRing();
 }
 
-// Initialize Observers
-document.querySelectorAll('.portfolio-item, .skill-card, .stat-item').forEach(el => {
-    observer.observe(el);
-});
-
-// Mobile Menu Toggle Fix
-const toggleMenu = () => {
-    const nav = document.querySelector('.nav-links');
-    nav.classList.toggle('active');
-    // Toggle icon animation
-    document.querySelectorAll('.menu-toggle span').forEach((span, i) => {
-        span.style.transform = nav.classList.contains('active') 
-            ? (i===0?'rotate(45deg) translate(5px, 5px)':i===1?'opacity:0':'rotate(-45deg) translate(7px, -7px)') 
-            : 'none';
+// --- Scroll-Reveal (data-reveal) ---
+const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
     });
-};
+}, { threshold: 0.12 });
 
-// Smooth Parallax
-window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const heroBg = document.querySelector('.hero::before');
-    if (heroBg) {
-        heroBg.style.transform = `translateY(${scrolled * 0.4}px)`;
-    }
-    document.querySelector('nav').classList.toggle('scrolled', scrolled > 50);
+document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+// --- Legacy observer: .portfolio-item, .skill-card, .stat-item ---
+const legacyObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('fade-in');
+
+        if (entry.target.classList.contains('stat-item')) {
+            const numEl = entry.target.querySelector('.stat-number');
+            if (numEl) animateCounter(numEl);
+        }
+        legacyObserver.unobserve(entry.target);
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.portfolio-item, .skill-card, .stat-item')
+    .forEach(el => legacyObserver.observe(el));
+
+// --- Counter Animation ---
+function animateCounter(el) {
+    const raw    = el.innerText.trim();
+    const target = parseInt(raw);
+    const hasPls = raw.includes('+');
+    if (isNaN(target)) return;
+
+    const duration = 1400;
+    let start = null;
+    const step = ts => {
+        if (!start) start = ts;
+        const progress = Math.min((ts - start) / duration, 1);
+        const eased    = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
+        el.textContent = Math.floor(eased * target) + (hasPls ? '+' : '');
+        if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+}
+
+// --- Navbar Scroll State ---
+const nav = document.querySelector('nav');
+if (nav) {
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+}
+
+// --- Mobile Menu Toggle ---
+const toggleMenu = () => {
+    const links = document.querySelector('.nav-links');
+    if (!links) return;
+    links.classList.toggle('active');
+};
+window.toggleMenu = toggleMenu; // expose globally
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+        document.querySelector('.nav-links')?.classList.remove('active');
+    });
 });
+
+// --- Parallax on hero bg (subtle) ---
+const hero = document.querySelector('.hero');
+if (hero) {
+    window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        hero.style.setProperty('--parallax', `${y * 0.3}px`);
+    }, { passive: true });
+}
+
+// --- Form Handler ---
+const form = document.querySelector('.contact-form');
+if (form) {
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = form.querySelector('.submit-button');
+        if (!btn) return;
+        btn.textContent = 'Sent ✓';
+        btn.style.background = '#1a6e3f';
+        setTimeout(() => {
+            btn.textContent = 'Send Message';
+            btn.style.background = '';
+            form.reset();
+        }, 3000);
+    });
+}
+
+// --- Add cursor DOM elements if not present ---
+if (!document.querySelector('.cursor')) {
+    const c  = document.createElement('div'); c.className  = 'cursor';
+    const cr = document.createElement('div'); cr.className = 'cursor-ring';
+    document.body.appendChild(c);
+    document.body.appendChild(cr);
+}

@@ -3,106 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khaled Magdy's Portfolio</title>
-    
-    <!-- Bootstrap 5 CSS -->
+    <title>Khaled Magdy — Video Editor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
-    <div class="bg-gradient"></div>
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+<div class="bg-gradient"></div>
 
-    <nav>
-        <a href="index.html" style="text-decoration: none;">
+<nav>
+    <a href="index.html" style="text-decoration:none;">
         <div class="logo">Khaled</div>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Video Editor and SEO Content Specialist</h1>
-            <p class="subtitle">Transforming raw footage into cinematic experiences that captivate and inspire</p>
-            <a href="portfolio.html" class="cta-button">View My Work</a>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-eyebrow">Video Editor &amp; Visual Storyteller</div>
+        <h1>Khaled<br><em>Magdy</em></h1>
+        <p class="subtitle">8+ years transforming raw footage into cinematic narratives — from high-energy commercials to intimate documentaries. Every frame matters.</p>
+        <a href="portfolio.html" class="cta-button"><span>View My Work</span></a>
+    </div>
+    <div class="scroll-hint">
+        <div class="scroll-line"></div>
+        Scroll
+    </div>
+</section>
 
-    <section id="featured-work" class="page-section">
-    <h2 class="section-title">Featured Work</h2>
+<!-- FEATURED WORK -->
+<section id="featured-work" class="page-section">
+    <span class="section-label">Selected Projects</span>
+    <h2 class="section-title" data-reveal>Featured Work</h2>
+    <div class="section-divider"></div>
+
     <div class="portfolio-grid">
-        <a href="project-1.html" style="text-decoration: none;">
-        <div class="portfolio-item">
-            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=450&fit=crop" alt="Project 1">
-            <div class="portfolio-overlay">
-                <h3 id="Brand">Brand Commercial</h3>
+        <a href="project-1.html" style="text-decoration:none;">
+            <div class="portfolio-item" data-reveal>
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1200&h=675&fit=crop" alt="Brand Commercial" loading="lazy">
+                <span class="portfolio-tag">Commercial</span>
+                <div class="portfolio-overlay">
+                    <h3>Brand Commercial</h3>
+                    <p>Vertical Reel · Fast-Paced</p>
+                </div>
             </div>
-        </div>
         </a>
-        <a href="project-2.html" style="text-decoration: none;">
-        <div class="portfolio-item">
-            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&h=450&fit=crop" alt="Project 2">
-            <div class="portfolio-overlay">
-                <h3 id="Music">Music Video</h3>
+        <a href="project-2.html" style="text-decoration:none;">
+            <div class="portfolio-item" data-reveal data-reveal-delay="1">
+                <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&h=500&fit=crop" alt="Music Video" loading="lazy">
+                <span class="portfolio-tag">Music</span>
+                <div class="portfolio-overlay">
+                    <h3>Music Video</h3>
+                    <p>16:9 · Cinematic Color</p>
+                </div>
             </div>
-        </div>
         </a>
-        <div class="portfolio-item">
-            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=450&fit=crop" alt="Project 3">
+        <div class="portfolio-item" data-reveal data-reveal-delay="2">
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=500&fit=crop" alt="Documentary" loading="lazy">
+            <span class="portfolio-tag">Documentary</span>
             <div class="portfolio-overlay">
                 <h3>Documentary Short</h3>
+                <p>Narrative Storytelling</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="about-teaser" class="page-section">
-    <h2 class="section-title">About Me</h2>
-    <p class="about-content">
-        I'm a passionate video editor transforming ideas into cinematic stories. With 8+ years of experience, I craft visuals that resonate and inspire.
+<!-- ABOUT TEASER -->
+<section id="about-teaser" class="page-section" style="padding-top:0;">
+    <span class="section-label" data-reveal>About</span>
+    <h2 class="section-title" data-reveal>The Craft</h2>
+    <div class="section-divider"></div>
+    <p class="about-description" data-reveal style="max-width:680px;">
+        I'm a passionate video editor transforming ideas into cinematic stories. With 8+ years of hands-on experience, I craft visuals that connect, resonate, and inspire — from concept to delivery.
     </p>
-    <a href="about.html" class="cta-button">Read More</a>
+    <a href="about.html" class="cta-button" data-reveal><span>Read More</span></a>
 </section>
 
+<!-- Logos -->
+<section class="container my-5">
+  <div class="row justify-content-center align-items-center g-4">
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+      <img src="ClientLogos/WR.png" alt="Client 1" class="img-fluid">
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+      <img src="ClientLogos/KDC.png" alt="Client 2" class="img-fluid">
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+      <img src="ClientLogos/Dahab.png" alt="Client 3" class="img-fluid">
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+      <img src="ClientLogos/AhmedNageh.png" alt="Client 4" class="img-fluid">
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center">
+      <img src="logo5.png" alt="Client 5" class="img-fluid">
+    </div>
+    <!-- add more logos as needed -->
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="experience-timeline">
+    <h2 data-reveal>Professional Journey</h2>
+    <div class="timeline-container">
+        <article class="timeline-item" data-reveal>
+            <div class="timeline-date">2016 – 2018</div>
+            <div class="timeline-content">
+                <h3>Getting Started</h3>
+                <p>Explored video editing, created small projects, experimented with styles, and built my foundation.</p>
+            </div>
+        </article>
+        <article class="timeline-item" data-reveal data-reveal-delay="1">
+            <div class="timeline-date">2018 – 2020</div>
+            <div class="timeline-content">
+                <h3>Practicing &amp; Learning</h3>
+                <p>Continued editing after moving to Egypt, refining techniques and exploring creative ideas.</p>
+            </div>
+        </article>
+        <article class="timeline-item" data-reveal data-reveal-delay="2">
+            <div class="timeline-date">2020 – 2021</div>
+            <div class="timeline-content">
+                <h3>Quarantine Boost</h3>
+                <p>Edited viral-style packs during COVID quarantine, practiced 3D design in Blender, and sharpened storytelling skills.</p>
+            </div>
+        </article>
+        <article class="timeline-item" data-reveal data-reveal-delay="3">
+            <div class="timeline-date">2021 – 2024</div>
+            <div class="timeline-content">
+                <h3>Intensive Skill-Building</h3>
+                <p>Focused on editing projects, motion graphics, and experimenting with new software. Built a solid workflow and portfolio.</p>
+            </div>
+        </article>
+        <article class="timeline-item active" data-reveal data-reveal-delay="4">
+            <div class="timeline-date">June 2024 – Present</div>
+            <div class="timeline-content">
+                <h3>Professional Work</h3>
+                <p>Started working full-time as a video editor, delivering polished content for clients and applying years of experience to real-world projects.</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- SKILLS PREVIEW -->
 <section id="skills" class="page-section">
-    <h2 class="section-title">What I Do</h2>
-    <div class="skills-container">
-        <div class="skill-card">
-            <div class="skill-icon">🎬</div>
+    <span class="section-label">Expertise</span>
+    <h2 class="section-title" data-reveal>What I Do</h2>
+    <div class="section-divider"></div>
+    <div class="skills-container" style="margin-bottom:3rem;">
+        <div class="skill-card" data-reveal>
+            <span class="skill-icon">🎬</span>
             <h3>Video Editing</h3>
+            <span class="skill-num">01</span>
         </div>
-        <div class="skill-card">
-            <div class="skill-icon">🎨</div>
+        <div class="skill-card" data-reveal data-reveal-delay="1">
+            <span class="skill-icon">🎨</span>
             <h3>Color Grading</h3>
+            <span class="skill-num">02</span>
         </div>
-        <div class="skill-card">
-            <div class="skill-icon">✨</div>
+        <div class="skill-card" data-reveal data-reveal-delay="2">
+            <span class="skill-icon">✨</span>
             <h3>Motion Graphics</h3>
+            <span class="skill-num">03</span>
         </div>
     </div>
-    <a href="skills.html" class="cta-button">See All Skills</a>
+    <a href="skills.html" class="cta-button" data-reveal><span>See All Skills</span></a>
 </section>
 
-<section id="stats" class="page-section">
-    <h2 class="section-title">Numbers Speak</h2>
+<!-- STATS -->
+<section id="stats" class="page-section" style="padding-top:0;">
+    <span class="section-label" data-reveal>Numbers</span>
+    <h2 class="section-title" data-reveal>Numbers Speak</h2>
+    <div class="section-divider"></div>
     <div class="stats">
         <div class="stat-item">
             <div class="stat-number">50+</div>
@@ -116,28 +201,33 @@
             <div class="stat-number">15</div>
             <div class="stat-label">Awards Won</div>
         </div>
+        <div class="stat-item">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
     </div>
 </section>
 
-<section id="contact-cta" class="page-section">
-    <h2 class="section-title">Let's Work Together</h2>
-    <p>Got a project or idea? I'd love to help you bring it to life.</p>
-    <a href="contact.html" class="cta-button">Contact Me</a>
+<!-- CTA -->
+<section id="contact-cta" class="page-section" style="text-align:center;">
+    <span class="section-label section-centered" data-reveal>Ready?</span>
+    <h2 class="section-title" data-reveal>Let's Work Together</h2>
+    <div class="section-divider" style="margin:1.4rem auto 2.5rem;"></div>
+    <p data-reveal style="color:var(--muted);margin-bottom:2rem;font-family:var(--font-serif);font-size:1.1rem;">Got a project or idea? I'd love to help bring it to life.</p>
+    <a href="contact.html" class="cta-button" data-reveal><span>Contact Me</span></a>
 </section>
 
-    <footer>
-        <div class="social-links">
-            <a href="#" aria-label="YouTube">▶</a>
-            <a href="#" aria-label="Instagram">📷</a>
-            <a href="#" aria-label="LinkedIn">💼</a>
-            <a href="#" aria-label="Email">✉</a>
-        </div>
-        <p>&copy; 2026 Khaled. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2026 Khaled Magdy. All rights reserved.</p>
+    <div class="social-links">
+        <a href="#" aria-label="YouTube">▶</a>
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="LinkedIn">💼</a>
+        <a href="#" aria-label="Email">✉</a>
+    </div>
+</footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

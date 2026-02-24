@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Reel – Project 1</title>
+    <title>Social Media Reel — Project 1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
 <div class="bg-gradient"></div>
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -28,30 +31,28 @@
 </nav>
 
 <section class="project-detail-section">
-    <div class="text-center mb-5">
-        <a href="portfolio.html" class="back-link">← Back to Portfolio</a>
-        <h1 class="section-title">Social Media Reel</h1>
-        <p class="text-secondary">Vertical Video · Fast-Paced Edit</p>
-    </div>
+    <a href="portfolio.html" class="back-link">← Back to Portfolio</a>
+    
+    <span class="section-label">Project 01</span>
+    <h1 class="section-title" data-reveal>Social Media Reel</h1>
+    <p class="project-subtitle">Vertical Video · Fast-Paced Edit · Instagram Reels</p>
+    <div class="section-divider"></div>
 
-    <div class="container-fluid">
-        <div class="row g-5 align-items-start">
-            <div class="col-12 col-lg-5">
-                <div class="video-item vertical">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                </div>
+    <div class="row g-5 align-items-start" style="margin-top:2rem;">
+        <div class="col-12 col-lg-5" data-reveal>
+            <div class="video-item vertical">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
             </div>
-
-            <div class="col-12 col-lg-7">
-                <div class="project-info">
-                    <div class="info-block">
-                        <h3>Concept</h3>
-                        <p>A high-energy social reel designed to stop the scroll within the first two seconds using punchy cuts and bold captions.</p>
-                    </div>
-                    <div class="info-block">
-                        <h3>Execution</h3>
-                        <p>Edited in Premiere Pro with frame-accurate cuts. Optimized for Instagram Reels with safe-zone awareness.</p>
-                    </div>
+        </div>
+        <div class="col-12 col-lg-7">
+            <div class="project-info" data-reveal data-reveal-delay="1">
+                <div class="info-block">
+                    <h3>Concept</h3>
+                    <p>A high-energy social reel designed to stop the scroll within the first two seconds using punchy cuts and bold captions.</p>
+                </div>
+                <div class="info-block">
+                    <h3>Execution</h3>
+                    <p>Edited in Premiere Pro with frame-accurate cuts. Optimized for Instagram Reels with safe-zone awareness and vertical composition in mind.</p>
                 </div>
             </div>
         </div>
@@ -59,9 +60,16 @@
 </section>
 
 <footer>
-    <p>&copy; 2024 Khaled Magdy. All rights reserved.</p>
+    <p>&copy; 2026 Khaled Magdy. All rights reserved.</p>
+    <div class="social-links">
+        <a href="#" aria-label="YouTube">▶</a>
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="LinkedIn">💼</a>
+        <a href="#" aria-label="Email">✉</a>
+    </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

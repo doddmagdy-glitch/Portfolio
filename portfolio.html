@@ -3,118 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Editor Portfolio - Portfolio</title>
-    
-    <!-- Bootstrap 5 CSS -->
+    <title>Khaled Magdy — Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="bg-gradient"></div>
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+<div class="bg-gradient"></div>
 
-    <nav>
-        <a href="index.html" style="text-decoration: none;">
-        <div class="logo">Khaled</div>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html" class="active">Portfolio</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+<nav>
+    <a href="index.html" style="text-decoration:none;"><div class="logo">Khaled</div></a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="page-section" style="padding-top:140px;">
+    <span class="section-label">Work</span>
+    <h2 class="section-title" data-reveal>Featured Projects</h2>
+    <div class="section-divider"></div>
+
+    <div class="portfolio-grid">
+        <div class="portfolio-item" data-reveal>
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1200&h=675&fit=crop" alt="Cinematic Wedding" loading="lazy">
+            <span class="portfolio-tag">Reel Editing</span>
+            <div class="portfolio-overlay">
+                <h3>Cinematic Wedding</h3>
+                <p>Vertical Reel Editing</p>
+                <a href="project-1.html" class="cta-button" style="margin-top:1rem;padding:0.6rem 1.2rem;font-size:0.62rem;"><span>View Case Study</span></a>
+            </div>
         </div>
-    </nav>
 
-    <section class="page-section">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="portfolio-grid">
-            
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=450&fit=crop" alt="Project 1">
-                <div class="portfolio-overlay">
-                    <h3>Cinematic Wedding</h3>
-                    <p>Vertical Reel Editing</p>
-                    <a href="project-1.html" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 10px;">
-                        View Case Study
-                    </a>
-                </div>
+        <div class="portfolio-item" data-reveal data-reveal-delay="1">
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=500&fit=crop" alt="Commercial Campaign" loading="lazy">
+            <span class="portfolio-tag">16:9 Commercial</span>
+            <div class="portfolio-overlay">
+                <h3>Commercial Campaign</h3>
+                <p>Widescreen 16:9 Production</p>
+                <a href="project-2.html" class="cta-button" style="margin-top:1rem;padding:0.6rem 1.2rem;font-size:0.62rem;"><span>View Project</span></a>
             </div>
-
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=450&fit=crop" alt="Project 2">
-                <div class="portfolio-overlay">
-                    <h3>Commercial Campaign</h3>
-                    <p>Widescreen 16:9 Production</p>
-                    <a href="project-2.html" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 10px;">
-                        View Project
-                    </a>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=800&h=450&fit=crop" alt="Project 3">
-                <div class="portfolio-overlay">
-                    <h3>Social Media Content</h3>
-                    <p>Fast-paced viral editing</p>
-                    <a href="#" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 10px;">View Project</a>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&h=450&fit=crop" alt="Project 4">
-                <div class="portfolio-overlay">
-                    <h3>Documentary Short</h3>
-                    <p>Narrative storytelling</p>
-                    <a href="#" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 10px;">View Project</a>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=450&fit=crop" alt="Project 5">
-                <div class="portfolio-overlay">
-                    <h3>Corporate Brand Film</h3>
-                    <p>Professional identity video</p>
-                    <a href="#" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 10px;">View Project</a>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&h=450&fit=crop" alt="Project 6">
-                <div class="portfolio-overlay">
-                    <h3>Event Highlight</h3>
-                    <p>High-energy event coverage</p>
-                    <a href="#" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 10px;">View Project</a>
-                </div>
-            </div>
-
         </div>
-    </section>
 
-    <footer>
-        <div class="social-links">
-            <a href="#" aria-label="YouTube">▶</a>
-            <a href="#" aria-label="Instagram">📷</a>
-            <a href="#" aria-label="LinkedIn">💼</a>
-            <a href="#" aria-label="Email">✉</a>
+        <div class="portfolio-item" data-reveal data-reveal-delay="2">
+            <img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=800&h=500&fit=crop" alt="Social Media" loading="lazy">
+            <span class="portfolio-tag">Social</span>
+            <div class="portfolio-overlay">
+                <h3>Social Media Content</h3>
+                <p>Fast-paced Viral Editing</p>
+                <a href="#" class="cta-button" style="margin-top:1rem;padding:0.6rem 1.2rem;font-size:0.62rem;"><span>View Project</span></a>
+            </div>
         </div>
-        <p>&copy; 2024 Khaled Magdy. All rights reserved.</p>
-    </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
+        <div class="portfolio-item" data-reveal>
+            <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&h=500&fit=crop" alt="Documentary" loading="lazy">
+            <span class="portfolio-tag">Documentary</span>
+            <div class="portfolio-overlay">
+                <h3>Documentary Short</h3>
+                <p>Narrative Storytelling</p>
+                <a href="#" class="cta-button" style="margin-top:1rem;padding:0.6rem 1.2rem;font-size:0.62rem;"><span>View Project</span></a>
+            </div>
+        </div>
+
+        <div class="portfolio-item" data-reveal data-reveal-delay="1">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=500&fit=crop" alt="Corporate" loading="lazy">
+            <span class="portfolio-tag">Corporate</span>
+            <div class="portfolio-overlay">
+                <h3>Corporate Brand Film</h3>
+                <p>Professional Identity Video</p>
+                <a href="#" class="cta-button" style="margin-top:1rem;padding:0.6rem 1.2rem;font-size:0.62rem;"><span>View Project</span></a>
+            </div>
+        </div>
+
+        <div class="portfolio-item" data-reveal data-reveal-delay="2">
+            <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&h=500&fit=crop" alt="Event" loading="lazy">
+            <span class="portfolio-tag">Event</span>
+            <div class="portfolio-overlay">
+                <h3>Event Highlight</h3>
+                <p>High-Energy Event Coverage</p>
+                <a href="#" class="cta-button" style="margin-top:1rem;padding:0.6rem 1.2rem;font-size:0.62rem;"><span>View Project</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Khaled Magdy. All rights reserved.</p>
+    <div class="social-links">
+        <a href="#" aria-label="YouTube">▶</a>
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="LinkedIn">💼</a>
+        <a href="#" aria-label="Email">✉</a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
