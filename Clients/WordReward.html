@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WordReward Project — Khaled Magdy</title>
+    <title>WordReward — Dominating the Digital Feed</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -16,92 +19,137 @@
 <div class="bg-gradient"></div>
 
 <nav>
-    <a href="index.html" style="text-decoration:none;">
+    <a href="../index.html" style="text-decoration:none;">
         <div class="logo">Khaled</div>
     </a>
     <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../contact.html">Contact</a></li>
     </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-    </div>
 </nav>
 
-<section class="page-section project-hero">
-    <span class="section-label" data-reveal>Case Study</span>
-    <h1 class="project-title" data-reveal>WordReward</h1>
-    
-    <div class="project-meta-grid" data-reveal>
-        <div class="meta-item">
-            <span class="meta-label">Client</span>
-            <span class="meta-value">WordReward</span>
-        </div>
-        <div class="meta-item">
-            <span class="meta-label">Role</span>
-            <span class="meta-value">Video Editor </span>
-        </div>
-        <div class="meta-item">
-            <span class="meta-label">Year</span>
-            <span class="meta-value">2024 - Today</span>
-        </div>
-        <div class="meta-item">
-            <span class="meta-label">Deliverables</span>
-            <span class="meta-value">Full Variety of Short-Form Content</span>
-        </div>
+<header class="hero">
+    <div class="hero-content">
+        <span class="hero-eyebrow" data-reveal>WordReward Agency</span>
+        <h1 data-reveal>Dominating the Digital <em>Feed</em></h1>
+        <p class="subtitle" data-reveal>
+            Bridging the gap between "standard marketing" and "viral-ready content." I manage high-volume video production, transforming raw medical and corporate footage into high-retention assets.
+        </p>
     </div>
-</section>
+</header>
 
-<section class="page-section" style="padding-top: 0;">
-    <div class="video-grid">
-        <div class="video-container" data-reveal>
-            <div class="video-placeholder">
-                <span><iframe src="https://drive.google.com/file/d/16KESf4E3uBCNZx0t4vhwtQ0Yw4J-oD8v/view?usp=sharing" width="640" height="480" allow="autoplay" allowfullscreen></iframe></span>
+<section class="page-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-reveal>
+                <span class="section-label">The Challenge</span>
+                <h2 class="section-title">Beyond "Good" Editing</h2>
+                <p style="color:var(--muted); font-family:var(--font-serif); font-size:1.1rem; margin-top: 1rem;">
+                    In a saturated market, standard editing isn't enough. Clients require a delicate balance: maintaining professional authority while capturing the split-second attention of the TikTok and Instagram algorithms.
+                </p>
             </div>
-        </div>
-        
-        <div class="video-container" data-reveal data-reveal-delay="1">
-            <div class="video-placeholder">
-                <span>[ INSERT VIDEO 2 ]</span>
-            </div>
-        </div>
-        
-        <div class="video-container" data-reveal>
-            <div class="video-placeholder">
-                <span>[ INSERT VIDEO 3 ]</span>
-            </div>
-        </div>
-        
-        <div class="video-container" data-reveal data-reveal-delay="1">
-            <div class="video-placeholder">
-                <span>[ INSERT VIDEO 4 ]</span>
+            <div class="col-lg-7">
+                <div class="stats" data-reveal>
+                    <div class="stat-item">
+                        <div class="stat-number" data-suffix="K+">500</div>
+                        <div class="stat-label">Total Organic Views</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-suffix="K+">445</div>
+                        <div class="stat-label">TikTok Views</div>
+                    </div>
+                    <div class="stat-item" style="border-right:none;">
+                        <div class="stat-number" data-suffix="%">100</div>
+                        <div class="stat-label">Internal Efficiency</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="page-section project-details">
-    <div class="row">
-        <div class="col-md-4">
-            <h2 class="section-title" data-reveal style="font-size: 2rem;">The Brief</h2>
-            <div class="section-divider"></div>
+<section class="page-section" style="background: none; padding-top: 100px;">
+    <span class="section-label section-centered" data-reveal>🛠️ The Strategy</span>
+    <h2 class="section-title" style="text-align: center;" data-reveal>Volume + Velocity</h2>
+    <div class="section-divider" style="margin: 1.5rem auto 4rem;" data-reveal></div>
+
+    <div class="skills-container">
+        <div class="skill-card" data-reveal>
+            <span class="skill-icon">📈</span>
+            <h3>Data-Driven Hooks</h3>
+            <p>Leveraging SEO background to identify high-search-volume topics and translating them into "scroll-stopping" visual intros.</p>
+            <span class="skill-num">01</span>
         </div>
-        <div class="col-md-8">
-            <p class="editorial-text" data-reveal>
-                I started at WordReward as a video editor intern, creating promotional clips and social media content. After the internship, I transitioned to a full-time role, continuing to produce campaign videos while sharpening my editing and motion graphics skills.
-            </p>
-            <p class="editorial-text" data-reveal>
-                The experience gave me practical, hands-on skills in video editing, motion graphics, and producing content optimized for social media.
-            </p>
+
+        <div class="skill-card" data-reveal data-reveal-delay="1">
+            <span class="skill-icon">✨</span>
+            <h3>"Clean Authority"</h3>
+            <p>A minimalist yet sharp editing style ensuring professional expertise remains the focal point, while fast-paced cuts keep viewers engaged.</p>
+            <span class="skill-num">02</span>
+        </div>
+
+        <div class="skill-card" data-reveal data-reveal-delay="2">
+            <span class="skill-icon">⚙️</span>
+            <h3>Algorithm Optimization</h3>
+            <p>Tailoring 29+ unique Reels in a single month to meet the specific "watch-time" requirements of TikTok, Facebook, and Instagram.</p>
+            <span class="skill-num">03</span>
         </div>
     </div>
 </section>
 
-<section class="page-section" style="text-align: center; padding-bottom: 6rem;">
-    <a href="KDC.html" class="cta-button" data-reveal><span>Next Project</span></a>
+<section class="page-section">
+    <div class="container">
+        <div class="about-content">
+            <span class="section-label" data-reveal>💡 The Impact (ROI)</span>
+            <div class="about-description" data-reveal>
+                <p style="font-size: 1.5rem; color: var(--white); line-height: 1.6;">
+                    Achieved massive reach with <strong>zero ad spend</strong>—saving the agency significant costs in paid traffic.
+                </p>
+                <p style="color: var(--muted); margin-top: 1.5rem;">
+                    Streamlined the workflow to handle massive output without sacrificing the "premium" feel of the agency’s portfolio.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section" style="background: var(--surface); padding: 6rem 0;">
+    <div class="container">
+        <span class="section-label" data-reveal>Explore</span>
+        <h2 class="section-title" data-reveal>The Creative Hub</h2>
+        <div class="section-divider" data-reveal></div>
+
+        <div class="row g-4 mt-4">
+            <div class="col-md-4" data-reveal>
+                <div class="skill-card" style="text-align: left; padding: 2rem;">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Dr. Ahmed Nageh</h3>
+                    <p style="color: var(--white); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 1rem;">Medical Authority</p>
+                    <p>A deep dive into how we generated half a million views for a Digestive System Specialist. <strong>Key Result: 15.3k avg views/TikTok.</strong></p>
+                    <a href="AhmedNageh.html" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 1rem;"><span>View Case Study</span></a>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-reveal data-reveal-delay="1">
+                <div class="skill-card" style="text-align: left; padding: 2rem;">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Freelance Archive</h3>
+                    <p style="color: var(--white); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 1rem;">Social Growth</p>
+                    <p>Experimental edits and high-animation Reels focused on personal branding. <strong>Key Result: High-level motion graphics.</strong></p>
+                    <a href="#" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 1rem;"><span>View Projects</span></a>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-reveal data-reveal-delay="2">
+                <div class="skill-card" style="text-align: left; padding: 2rem;">
+                    <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">SEO & Strategy</h3>
+                    <p style="color: var(--white); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 1rem;">Content Archive</p>
+                    <p>Where logic meets creativity—using AI and search data to fuel content calendars. <strong>Key Result: 5 months of optimized planning.</strong></p>
+                    <a href="#" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 1rem;"><span>View Strategy</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
@@ -132,11 +180,13 @@
     if (cursor && cursorRing) {
         document.addEventListener('mousemove', (e) => {
             cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-            cursorRing.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+            
+            setTimeout(() => {
+                cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            }, 80);
         });
     }
 </script>
-
+<script src="../script.js"></script>
 </body>
 </html>
-

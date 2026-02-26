@@ -55,6 +55,12 @@ body {
     cursor: none;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+    
+}
+
 /* ---- Custom Cursor ---- */
 .cursor {
     position: fixed;
@@ -221,6 +227,7 @@ nav.scrolled {
     position: relative;
     overflow: hidden;
 }
+
 
 /* Background image */
 .hero::before {
@@ -740,6 +747,88 @@ nav.scrolled {
     color: var(--muted);
     font-weight: 300;
     margin-bottom: 3rem;
+}
+
+/* Client Grid Styles (Matched to Portfolio Grid) */
+.client-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5px; /* Matches the exact gap of your portfolio grid */
+    background: var(--border); /* Matches the border color */
+}
+
+.client-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16/10; /* Keeps proportions clean */
+    background: var(--surface); /* Exact same gray shade as portfolio cards */
+    transition: background 0.4s var(--ease);
+    cursor: none; /* Keeps your custom red cursor active */
+    position: relative;
+    overflow: hidden;
+}
+
+.client-card:hover {
+    background: var(--surface2); /* Subtle hover effect to match your site's aesthetic */
+}
+
+.client-logo-wrapper {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.client-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(1) brightness(0.7);
+    transition: filter 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+.client-card:hover .client-logo {
+    filter: grayscale(0) brightness(1);
+    transform: scale(1.05);
+}
+
+.client-name {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    color: var(--muted);
+    transition: color 0.4s var(--ease);
+}
+
+.client-card:hover .client-name {
+    color: var(--red); /* Uses your primary red accent on hover */
+}
+
+/* Responsive adjustment mirroring your portfolio grid */
+@media (max-width: 992px) {
+    .client-logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .client-logo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Display prefixes (like $) before the number */
+.stat-number::before {
+    content: attr(data-prefix);
+}
+
+/* Display suffixes (like K+) after the number */
+.stat-number::after {
+    content: attr(data-suffix);
 }
 
 /* ============================================================
