@@ -564,6 +564,47 @@ nav.scrolled {
 }
 
 /* ============================================================
+   CLIENT LOGOS
+   ============================================================ */
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.logo-item {
+    background: var(--surface);
+    padding: 3rem;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16/10;
+    transition: background 0.4s;
+    cursor: none; /* Keeps your custom red dot cursor active */
+}
+
+.logo-item img {
+    max-width: 140px;
+    max-height: 70px;
+    object-fit: contain;
+    /* Keeps logos subtle so they don't break the dark theme */
+    filter: grayscale(100%) opacity(0.35);
+    transition: filter 0.5s var(--ease), transform 0.5s var(--ease);
+}
+
+/* Cinematic reveal on hover */
+.logo-item:hover { 
+    background: var(--surface2); 
+}
+
+.logo-item:hover img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.08);
+}
+
+/* ============================================================
    STATS
    ============================================================ */
 .stats {
@@ -953,6 +994,174 @@ footer p {
 .nav-link.active { color: var(--white) !important; }
 
 /* ============================================================
+   SINGLE PROJECT PAGE STYLES
+   ============================================================ */
+.project-hero {
+    padding-top: 12rem;
+    padding-bottom: 3rem;
+}
+
+.project-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 1rem 0 3rem;
+    color: #fff;
+}
+
+.project-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 2rem;
+}
+
+.meta-item {
+    background: var(--surface);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.meta-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.meta-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-placeholder {
+    font-family: 'Space Mono', monospace;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+}
+
+.editorial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive fixes for the project page */
+@media (max-width: 768px) {
+    .project-hero {
+        padding-top: 8rem;
+    }
+    .project-meta-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* Ensure the link behaves like the previous div container */
+a.logo-item {
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+}
+
+/* Optional: Add a subtle change to the custom cursor when hovering over a logo */
+a.logo-item:hover ~ .cursor {
+    transform: scale(1.5);
+    background: var(--red);
+}
+/* ============================================================
+   LOGO CLICK INDICATORS & ANIMATION
+   ============================================================ */
+
+/* 1. Ensure the logo item can contain absolute positioning */
+a.logo-item {
+    position: relative;
+    text-decoration: none;
+}
+
+/* 2. Create the "View Project" text hidden at the bottom */
+a.logo-item::after {
+    content: "View Case Study ↗";
+    position: absolute;
+    bottom: 1.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s var(--ease);
+}
+
+/* 3. Reveal the text on hover */
+a.logo-item:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 4. Add a continuous, subtle "breathing" animation to the logos 
+      so they look interactive and alive before hovering */
+a.logo-item img {
+    animation: gentlePulse 3s infinite alternate ease-in-out;
+}
+
+@keyframes gentlePulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.07); }
+}
+
+/* Optional: Override the animation on hover so it smoothly scales up */
+a.logo-item:hover img {
+    animation: none; /* Stops the breathing */
+    transform: scale(1.08); /* Keeps your original cinematic scale */
+}
+
+/* 5. Mobile Fix: Since phones don't have hover, always show the text on small screens */
+@media (max-width: 768px) {
+    a.logo-item::after {
+        opacity: 0.6; /* Keeps it slightly muted */
+        transform: translateY(0);
+        bottom: 1rem;
+    }
+}
+/* ============================================================
+   MULTI-VIDEO GRID
+   ============================================================ */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 columns */
+    gap: 1px; /* The 1px cinematic skeleton border */
+    background: var(--border); 
+    border: 1px solid var(--border); 
+    width: 100%;
+}
+
+/* Remove the individual container borders so we don't get double-thick lines */
+.video-grid .video-container {
+    border: none; 
+    margin: 0;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
@@ -997,6 +1206,13 @@ footer p {
     .stat-item:nth-child(2) { border-right: none; }
     .contact-form { padding: 2rem; }
     footer { flex-direction: column; align-items: flex-start; }
+
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .logo-item {
+        padding: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1004,4 +1220,7 @@ footer p {
     .stat-item { border-right: none; }
     .hero h1 { font-size: 3rem; }
     .cta-button { padding: 0.85rem 1.6rem; font-size: 0.65rem; }
+    .logo-grid {
+        grid-template-columns: 1fr;
+    }
 }
