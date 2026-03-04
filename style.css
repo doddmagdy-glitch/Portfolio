@@ -832,6 +832,81 @@ nav.scrolled {
 }
 
 /* ============================================================
+   WORDREWARD FEATURE SECTION
+   ============================================================ */
+.wr-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--corner);
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.wr-content {
+    padding: 4rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.wr-headline {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+.wr-description {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+}
+
+.wr-visual {
+    background: radial-gradient(circle at center, var(--red-dim) 0%, transparent 70%);
+    display: grid;
+    place-items: center;
+    padding: 3rem;
+    border-left: 1px solid var(--border);
+}
+
+.wr-featured-logo {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+    transition: transform 0.6s var(--ease);
+}
+
+.wr-container:hover .wr-featured-logo {
+    transform: scale(1.1) rotate(-2deg);
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 992px) {
+    .wr-container {
+        grid-template-columns: 1fr;
+    }
+    .wr-visual {
+        order: -1;
+        border-left: none;
+        border-bottom: 1px solid var(--border);
+        aspect-ratio: 16/9;
+    }
+    .wr-content {
+        padding: 3rem 2rem;
+    }
+}
+
+/* ============================================================
    CONTACT FORM
    ============================================================ */
 .contact-content {
@@ -1153,6 +1228,57 @@ footer p {
     line-height: 1.6;
     color: #ccc;
     margin-bottom: 1.5rem;
+}
+/* Add these specific styles to your existing style.css */
+
+.text-link {
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid var(--red);
+    transition: 0.3s var(--ease);
+}
+
+.text-link:hover {
+    color: var(--red);
+    border-bottom-color: var(--white);
+}
+
+/* Ensure all icons/emojis are replaced by white SVG or shapes */
+.wr-main-logo {
+    max-width: 300px;
+    filter: brightness(0) invert(1); /* Forces logo to be pure white */
+    opacity: 0.9;
+}
+
+/* Styling for the client grid in WordReward page */
+.wr-asset-card {
+    background: var(--surface2);
+    padding: 2rem;
+    border-radius: var(--corner);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.wr-asset-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+/* Placeholder for Client Work */
+.asset-placeholder {
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: var(--corner-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    border: 1px dashed var(--faint);
 }
 
 /* Responsive fixes for the project page */
