@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
     <title>Dr. Ahmed Nageh — Case Study</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,6 +30,12 @@
         <li><a href="../skills.html">Skills</a></li>
         <li><a href="../contact.html">Contact</a></li>
     </ul>
+    <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
 </nav>
 
 <header class="hero">
@@ -105,7 +112,7 @@
         <div class="about-content">
             <span class="section-label" data-reveal>Business ROI</span>
             <div class="about-description" data-reveal>
-                <p style="font-size: 1.5rem; color: var(--white); line-height: 1.6;">
+                <p style="font-size: 1.5rem; color: var(--black); line-height: 1.6;">
                     The campaign generated significant <strong>Organic Brand Equity</strong>. By focusing on "Retention-First" editing, we turned clinical information into viral, authoritative content.
                 </p>
             </div>

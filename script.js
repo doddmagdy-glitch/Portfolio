@@ -72,6 +72,35 @@ function animateCounter(el) {
     requestAnimationFrame(step);
 }
 
+// --- Theme Toggle (dark/light) ---
+(function () {
+    const root = document.documentElement;
+    const toggleBtn = document.getElementById('theme-toggle');
+
+    const applyTheme = theme => {
+        if (theme === 'dark') {
+            root.setAttribute('data-theme', 'dark');
+            if (toggleBtn) toggleBtn.textContent = '☀️';
+        } else {
+            root.removeAttribute('data-theme');
+            if (toggleBtn) toggleBtn.textContent = '🌙';
+        }
+    };
+
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    applyTheme(saved === 'dark' ? 'dark' : 'light');
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const isDark = root.getAttribute('data-theme') === 'dark';
+            const next = isDark ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+    }
+})();
+
 // --- Navbar Scroll State ---
 const nav = document.querySelector('nav');
 if (nav) {
@@ -120,6 +149,23 @@ if (form) {
         }, 3000);
     });
 }
+
+// --- Back to Top ---
+(function () {
+    const btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.textContent = '↑';
+    document.body.appendChild(btn);
+
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 700);
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
 
 // --- Add cursor DOM elements if not present ---
 if (!document.querySelector('.cursor')) {

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}})();</script>
     <title>WordReward — Dominating the Digital Feed</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,8 +27,15 @@
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
         <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../skills.html">Skills</a></li>
         <li><a href="../contact.html">Contact</a></li>
     </ul>
+    <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
 </nav>
 
 <header class="hero">
@@ -139,7 +147,7 @@
         <div class="about-content">
             <span class="section-label" data-reveal>💡 The Impact (ROI)</span>
             <div class="about-description" data-reveal>
-                <p style="font-size: 1.5rem; color: var(--white); line-height: 1.6;">
+                <p style="font-size: 1.5rem; color: var(--black); line-height: 1.6;">
                     Achieved massive reach with <strong>zero ad spend</strong>—saving the agency significant costs in paid traffic.
                 </p>
                 <p style="color: var(--muted); margin-top: 1.5rem;">
@@ -160,7 +168,7 @@
             <div class="col-md-4" data-reveal>
                 <div class="skill-card" style="text-align: left; padding: 2rem;">
                     <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Dr. Ahmed Nageh</h3>
-                    <p style="color: var(--white); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 1rem;">Medical Authority</p>
+                    <p style="color: var(--black); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 1rem;">Medical Authority</p>
                     <p>A deep dive into how we generated half a million views for a Digestive System Specialist. <strong>Key Result: 15.3k avg views/TikTok.</strong></p>
                     <a href="AhmedNageh.html" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 1rem;"><span>View Case Study</span></a>
                 </div>
@@ -169,7 +177,7 @@
             <div class="col-md-4" data-reveal data-reveal-delay="1">
                 <div class="skill-card" style="text-align: left; padding: 2rem;">
                     <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">Freelance Archive</h3>
-                    <p style="color: var(--white); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 1rem;">Social Growth</p>
+                    <p style="color: var(--black); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 1rem;">Social Growth</p>
                     <p>Experimental edits and high-animation Reels focused on personal branding. <strong>Key Result: High-level motion graphics.</strong></p>
                     <a href="#" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 1rem;"><span>View Projects</span></a>
                 </div>
@@ -178,7 +186,7 @@
             <div class="col-md-4" data-reveal data-reveal-delay="2">
                 <div class="skill-card" style="text-align: left; padding: 2rem;">
                     <h3 style="margin-bottom: 0.5rem; font-size: 1.2rem;">SEO & Strategy</h3>
-                    <p style="color: var(--white); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 1rem;">Content Archive</p>
+                    <p style="color: var(--black); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 1rem;">Content Archive</p>
                     <p>Where logic meets creativity—using AI and search data to fuel content calendars. <strong>Key Result: 5 months of optimized planning.</strong></p>
                     <a href="#" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 1rem;"><span>View Strategy</span></a>
                 </div>
@@ -191,37 +199,6 @@
     <p>&copy; 2026 Khaled Magdy. All rights reserved.</p>
 </footer>
 
-<script>
-    // Reveal Animations
-    const reveals = document.querySelectorAll('[data-reveal]');
-    const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-
-    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        });
-    }, revealOptions);
-
-    reveals.forEach(reveal => {
-        revealOnScroll.observe(reveal);
-    });
-
-    // Custom Cursor
-    const cursor = document.querySelector('.cursor');
-    const cursorRing = document.querySelector('.cursor-ring');
-    
-    if (cursor && cursorRing) {
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-            
-            setTimeout(() => {
-                cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-            }, 80);
-        });
-    }
-</script>
 <script src="../script.js"></script>
 </body>
 </html>
